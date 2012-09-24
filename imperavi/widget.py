@@ -18,6 +18,7 @@ class ImperaviWidget(Textarea):
     def __init__(self, *args, **kwargs):
         self.upload_path = kwargs.pop('upload_path', UPLOAD_PATH)
         self.imperavi_settings = IMPERAVI_SETTINGS
+        self.imperavi_settings.update(kwargs.pop('settings', {}))
         super(ImperaviWidget, self).__init__(*args, **kwargs)
 
     def render(self, name, value, attrs=None):
